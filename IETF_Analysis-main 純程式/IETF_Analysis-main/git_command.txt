@@ -1,0 +1,9 @@
+Ref : https://git-scm.com/docs/git
+
+common usage :
+
+1. git init
+# git 專案初始化
+2. git -v 
+# check version
+3. 

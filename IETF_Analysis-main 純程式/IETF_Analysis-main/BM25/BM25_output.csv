@@ -1,0 +1,35 @@
+Match No.,score,Mail Subject,Mail Content,Each mail score,Total number of mail
+idx: 4125,11.810044777386985,Re: [Idr] draft-dong-idr-node-target-ext-comm-05.txt - WG Adoption and IPR call (9/27 to 10/11/2022),"
+Robert,I strongly agree with the need to clarify the behavior with withdrawals, however there’s a big difference between potential inefficiency and erroneous behavior, I’d be very much interested in hearing from BGP implementors wrt point made.Wrt filtering - I’m not sure I follow, filtering is done inbound on the receiver, why would you need to filter post update generation? If you are referring to optional RR outbound filtering, I don’t think this is a realistic scenario, IMO, a RR should ignore such information and, when sending routes to its clients, do so indiscriminately.Cheers,JeffOn Oct 8, 2022, at 12:30, Robert Raszuk <robert@raszuk.net> wrote:﻿Hi Jeff,> (which is the train that has left the station long time ago ;-)).Nope .... for this one meaning targetted delivery of BGP UPDATES the train is still at the station. They are still loading coal on it. > I am not 100% sure if all nodes will continue to operate fine if they will be receiving withdrawals for > NLRIs never previously received. The draft talks nothing about handling withdrawals. Moreover lots of implementations apply RT filtering post update generation inline at the replication stage. So if withdraws come without a target ext community potentially 1000s of RR clients or IBGP peers will be receiving withdraws for NLRIs they never got MP_REACH for. At min draft should carefully discuss this. Thx,R.On Sat, Oct 8, 2022 at 9:14 PM Jeff Tantsura <jefftant.ietf@gmail.com> wrote:I support the progress of the draft, there’s a potential to use the functionality proposed in DC (RFC7938 alike deployments), I mostly agree with the points Robert has made, including philosophical ones (which is the train that has left the station long time ago ;-)).Robert - would you please elaborate on:I am not 100% sure if all nodes will continue to operate fine if they will be receiving withdraws for NLRIs never previously received. I don’t really see anything broken here, but I’m also not an implementor (just a consumer at scale).Thanks!Cheers,JeffOn Sep 27, 2022, at 14:42, Robert Raszuk <robert@raszuk.net> wrote:﻿Hi Sue & Authors,I have re-read the draft and have two concerns and suggestion. Concerns IMO need to be addressed before we adopt the draft. Suggestions can be added later. Major concern: The document talks about procedure during dissemination of update message(s). It is however completely silent about withdraws. As we know BGP UPDATE which contains withdraws can be build using only subject NLRIs. That means that those may/will not be subject to discussed filtering. I am not 100% sure if all nodes will continue to operate fine if they will be receiving withdraws for NLRIs never previously received. Yet propagating withdraws will happen everywhere. To address this well it seems that capability negotiation would be the safest bet. But isn't this too much to ask ? Minor concern: Which is more important RT or NT ? (RT when used with RTC of course). Suggestion: I would propose to make Target BGP Id to be a prefix not fixed 4 octet field. Wisely choosing BGP Ids can lead to very efficient distribution. Final word: Of course this proposal goes against BGP p2mp principle, but at least it is not p2p, but have potential built in to make it p2(subset-of-multipoint)peers. Thx a lot,Robert.On Tue, Sep 27, 2022 at 7:31 PM Susan Hares <shares@ndzh.com> wrote:
+
+
+This begins a 2 week WG adoption and IPR call for draft-dong-idr-node-target-ext-comm-05.txt.
+
+https://datatracker.ietf.org/doc/draft-dong-idr-node-target-ext-comm/"" target=""_blank"" rel=""nofollow"">https://datatracker.ietf.org/doc/draft-dong-idr-node-target-ext-comm/
+ 
+The authors should respond to this email with an IPR statement.
+
+ 
+The WG should consider in their discussion: 
+1) Will this new  transitive extended community help 
+in operational networks? 
+ 
+2) What conflicts does this new Extended Community have
+with other functions in general BGP route distribution or 
+
+VPNs (EVPN, IPVPN)? 
+ 
+3) do you have any concern about the text in the draft? 
+
+ 
+Cheerily, Sue
+
+
+
+_______________________________________________
+Idr mailing list
+Idr@ietf.org
+https://www.ietf.org/mailman/listinfo/idr"" rel=""noreferrer nofollow"" target=""_blank"">https://www.ietf.org/mailman/listinfo/idr
+
+_______________________________________________Idr mailing listIdr@ietf.orghttps://www.ietf.org/mailman/listinfo/idr"" target=""_blank"" rel=""nofollow"">https://www.ietf.org/mailman/listinfo/idr
+",[0. 0. 0. ... 0. 0. 0.],4264

@@ -1,0 +1,4 @@
+Mail summary
+Moreover lots of implementations apply RT filtering post update generation inline at the replication stage.
+As we know BGP UPDATE which contains withdraws can be build using only subject NLRIs.
+2) What conflicts does this new Extended Community have with other functions in general BGP route distribution or

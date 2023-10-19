@@ -1,0 +1,14 @@
+beautifulsoup4
+googletrans==4.0.0-rc1
+jieba
+matplotlib
+nltk
+numpy
+pandas
+Pillow
+rank_bm25
+requests
+streamlit
+sumy
+wordcloud
+streamlit-aggrid
